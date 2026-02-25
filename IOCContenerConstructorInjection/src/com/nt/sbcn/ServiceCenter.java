@@ -7,7 +7,13 @@ public class ServiceCenter {
    Vehicle vehicle;
    String serviceType;
    
-   public void ServiceCenter() {
-	  System.out.println("Full Engine Checkup Done !!!.."); 
+   public void setServiceType(String serviceType) {
+       this.serviceType = serviceType;
+   }
+
+   public void performService() {
+       System.out.println("\n--- Service Center ---");
+       System.out.println("Service Type: " + serviceType);
+       vehicle.displayVehicleInfo();
    }
 }

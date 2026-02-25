@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
            http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans.xsd">
-           
-           
-           <bean id=""/>
-           
-           
-      </beans>
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.nt"/>
+
+    <!-- Engine Bean -->
+    <bean id="engine" class="com.nt.sbcn.Engine">
+        <constructor-arg value="Petrol"/>
+        <constructor-arg value="120"/>
+    </bean>
+
+    <!-- Tyre Bean -->
+    <bean id="tyre" class="com.nt.sbcn.Tyre">
+        <property name="brand" value="MRF"/>
+        <property name="size" value="18"/>
+    </bean>
+
+    <!-- Vehicle Bean -->
+    <bean id="vehicle" class="com.nt.sbcn.Vehicle">
+        <constructor-arg ref="engine"/>
+        <property name="vehicleName" value="Sports Bike"/>
+    </bean>
+
+    <!-- ServiceCenter Bean -->
+    <bean id="serviceCenter" class="com.nt.sbcn.ServiceCenter">
+        <property name="serviceType" value="Full Body Check"/>
+    </bean>
+
+</beans>

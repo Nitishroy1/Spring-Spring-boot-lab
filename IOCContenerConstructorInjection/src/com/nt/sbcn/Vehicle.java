@@ -10,6 +10,11 @@ public class Vehicle {
 	public Vehicle(Engine engine ) {
 		this.engine=engine;
 	}
+	
+	public void setVehicleName(String vehicleName) {
+        this.vehicleName = vehicleName;
+    }
+
 	@Autowired
 	public void setTyre(Tyre tyre) {
 		this.tyre=tyre;
@@ -17,10 +22,9 @@ public class Vehicle {
 	
 	public void displayVehicleInfo() {
 		System.out.println("Vehical Name is: "+this.vehicleName);
-		System.out.println("Vehical Engine Type is: "+engine.engineType);
-		System.out.println("Vehical Engine Hourse Power  is: "+engine.horsePower);
-		System.out.println("Vehical Tyre info  is: "+ tyre.brand);
-		System.out.println("Vehical Tyre info  is: "+ tyre.size);
+		engine.showEngineDetails();
+		tyre.showTyreDetails(); 
+		
 		
       		
 	}
