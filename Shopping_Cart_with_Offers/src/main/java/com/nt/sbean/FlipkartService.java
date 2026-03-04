@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 import org.springframework.stereotype.Component;
-@Component
+@Component("flipkart")
 public class FlipkartService implements ShoppingService {
 
 	HashMap<String,Double>product=new HashMap<>();
