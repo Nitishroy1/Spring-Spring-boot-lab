@@ -18,7 +18,7 @@ public class EmployeeService implements IEmployeeService {
 		empByDesgs.forEach(emp ->{
 			emp.setGrossSalary(emp.getSalary()+emp.getSalary()*0.2);
 			emp.setNetSalary(emp.getGrossSalary()-emp.getSalary());
-		});
+		 });
 		return empByDesgs;
 	}
    
